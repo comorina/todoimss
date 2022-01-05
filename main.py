@@ -34,7 +34,7 @@ class UserData(BaseModel):
 async def root()->dict:
     return {"data" : users}   
 
-@app.post("/user", tags=["users"])
+@app.post("/user/update", tags=["users"])
 def add_User(user:UserData) -> dict:
     users.append(user.dict())
     return users[-1]
