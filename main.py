@@ -7,7 +7,7 @@ app = FastAPI()
 
 
 origins = [
-    "https://comorina.github.io/FastApiExample/",
+    "https://localhost:3000",
 ]
 
 
