@@ -52,9 +52,3 @@ def add_todo(todo:Course) -> dict:
     todos.append(todo.dict())
     return todos[-1]
     
-@app.delete("/todo/delete", tags=["todos"])
-async def delete_Todo(id:int) ->dict:
-    for todo in todos:
-        if( todo["id"] == id ):
-            todos.remove(todo)
-    return todos
