@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-
+import starlette.responses as _responses
 
 app = FastAPI()
 
@@ -29,7 +29,9 @@ class UserData(BaseModel):
 
     username : str
 
-
+@app.get("/")
+async def loot()->dict:
+    return _responses.RedirectResponse("/docs")  
 @app.get("/user", tags=['users'])
 async def root()->dict:
     return {"data" : users}   
