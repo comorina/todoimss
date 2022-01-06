@@ -7,13 +7,13 @@ app = FastAPI()
 
 
 origins = [
-    "http://comorina.github.io/FastApiExample/",
+    "https://comorina.github.io/FastApiExample/",
 ]
 
 
 app.add_middleware(
         CORSMiddleware,
-        allow_origins=origins,
+        allow_origin=origins,
         allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"]
